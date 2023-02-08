@@ -173,3 +173,5 @@ app.get("/get-proposal",async(req,res)=>{
 app.listen(port,()=>{
     console.log("Server started at port: "+ port)
 })
+
+module.export = app
