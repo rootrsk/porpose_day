@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Love+Light&family=Love+Ya+Like+A+Sister&family=Poppins:ital,wght@0,100;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
+*{
+    font-family: 'Love Light', cursive;
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-family: 'Poppins', sans-serif;
+}
+h2{
+    text-align: center;
+    margin-top: 20px;
+}
+.login-div{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30vh;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    form{
+        max-width: 400px;
+        width: 90%;
+        input,button{
+            margin-top: 20px;
+        }
+    }
+}
+
+.create_new_page{
+    width: 90%;
+    margin: auto;
+    form{
+        input,button{
+            margin-top: 20px;
+        }
+    }
+}
+.terams_and_conditions{
+    list-style-type: none;
+    padding-inline-start: 0px !important;
+
+    li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.show-terms{
+    position: absolute;
+    overflow-y: scroll;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background: #fff;
+    li{
+        list-style-type: none;
+    }
+    .broken-heart{
+        height: 90vh;
+
+    }
+}
+
+.show-terms-broken{
+    position: absolute;
+    overflow-y: scroll;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background: #fff;
+    li{
+        list-style-type: none;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .broken-heart{
+        // height: 90vh;
+
+
+    }
+}
+
+.proposal_home{
+    width: 90%;
+    margin: auto;
+    margin-top: 200px;
+    .cheese_line{
+        font-family: 'Love Light', cursive;
+        font-size: 4rem;
+        text-align: center;
+        
+    }
+}
+.add-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    button{
+    
+        margin-left: 20px;
+        margin-bottom: 100px;
+    }
+}
