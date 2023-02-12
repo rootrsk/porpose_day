@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Love+Light&family=Love+Ya+Like+A+Sister&family=Poppins:ital,wght@0,100;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Love+Light&family=Love+Ya+Like+A+Sister&family=Pacifico&family=Poppins:ital,wght@0,100;0,300;0,400;1,100;1,200;1,300;1,400&family=Sono:wght@200;300;400;500&family=Zeyada&display=swap');
 *{
-    font-family: 'Love Light', cursive;
     font-family: 'Love Ya Like A Sister', cursive;
     font-family: 'Poppins', sans-serif;
+    font-family: 'Love Light', cursive;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Zeyada', cursive;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Sono', sans-serif;
+    font-family: 'Babylonica', cursive;
+    font-family: 'Love Ya Like A Sister', cursive;
 }
 h2{
     text-align: center;
@@ -86,14 +93,34 @@ h2{
 }
 
 .proposal_home{
-    width: 90%;
-    margin: auto;
-    margin-top: 200px;
+    // width: 90%;
+    // margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: scroll;
+    background: url('https://i.pinimg.com/originals/77/7d/21/777d210599820ce0321f8d1612f24720.gif');
+    background: url('https://thumbs.gfycat.com/RawGoodnaturedGnat-max-1mb.gif');
+    background: url('https://www.icegif.com/wp-content/uploads/icegif-5606.gif');
+    background: url('https://www.icegif.com/wp-content/uploads/icegif-5601.gif');
+    background: url('https://thumbs.gfycat.com/BoilingThirdFoxhound-size_restricted.gif');
+    background: url('https://bestanimations.com/media/roses/281761993garden-roses-swaying-gif.gif');
+    background: url('https://data.whicdn.com/images/296880011/original.gif');
+
     .cheese_line{
         font-family: 'Love Light', cursive;
         font-size: 4rem;
         text-align: center;
-        
+        margin-top: 30px;
+    }
+    background-position: center;
+    background-size: cover;
+    h2{
+        color: #fff;
+        font-size: 20px;
+        margin-top: 30px;
     }
 }
 .add-button{
@@ -105,4 +132,17 @@ h2{
         margin-left: 20px;
         margin-bottom: 100px;
     }
+}
+
+.text-clip{
+    font-weight: 700;
+    font-size: 40px;
+    background: url('https://img1.picmix.com/output/stamp/normal/6/6/2/5/795266_46389.gif');
+    background: url('https://bestanimations.com/media/many-hearts/1949864533tiny-small-hearts-pattern-flying-animated-gif-2.gif');
+    background: #fff;
+    background: url('https://j.gifs.com/yDNGog.gif');
+    background: url('https://i.makeagif.com/media/10-08-2016/OSmuFJ.gif');
+    background-size: cover;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

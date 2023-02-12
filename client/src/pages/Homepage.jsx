@@ -46,6 +46,7 @@ function Homepage() {
             return alert(data?.error)
         }
         setProposalStatus("accepted")
+        setTerms("accepted")
         console.log(data)
 
     }
@@ -77,7 +78,10 @@ function Homepage() {
             {proposal && proposal.user && 
                 <div className='proposal_home'>
                     <h2>You have been proposed by {proposal?.user?.showname}</h2>
-                    <p className='cheese_line'>{proposal?.user?.cheese_line}</p>
+                    <p 
+                        className='cheese_line text-clip'>
+                        "{proposal?.user?.cheese_line}"
+                    </p>
                     <div className='add-button'>
                         <button 
                             className='btn btn-success'
@@ -98,7 +102,7 @@ function Homepage() {
             {
                 proposal && proposal.user && proposalStatus==="accepted" && 
                 <div className='show-terms'>
-                    <h3>Terms and Conditions</h3>
+                    <h3>Agreements</h3>
                     {
                         proposal?.user?.terms_and_conditions?.map((term,idx)=>{
                             return <li key={idx+1}>
@@ -144,6 +148,7 @@ function Homepage() {
                     />
                 </div>
             }
+            
         </div>
     )
 }

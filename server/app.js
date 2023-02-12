@@ -3,6 +3,7 @@ const cors = require("cors")
 const jwt = require('jsonwebtoken')
 const User = require("./userModal")
 const env = require("dotenv")
+const morgan = require('morgan')
 env.config()
 require("./dbConfig")
 const app = express()
@@ -10,6 +11,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 const port = process.env.PORT || 3001
+app.use(morgan('combined'))
 app.get("/",(req,res)=>{
     res.json({
         message:"welcome to proposeal api"

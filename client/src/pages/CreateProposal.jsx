@@ -3,21 +3,24 @@ import React, { useState } from 'react'
 import { loginUser, porposeUrlGenerator, updateUserDetails } from '../utils'
 
 function CreateProposal() {
-    const [user,setUser] = useState(null)
-    const [cheeseLine,setCheeseLine] = useState("")
-    const [terms,setTerms] = useState([])
     const [show,setShow] = useState("")
-    const [condition,setCondition] = useState("")
+    const [user,setUser] = useState(null)
+    const [terms,setTerms] = useState([])
     const [theOne,setTheOne] = useState("")
-    const [generatedUrl,setGeneratedUrl] = useState("")
     const [username,setUsername] = useState("")
     const [password,setPassword] = useState("")
+    const [loading,setLoading] = useState(false)
+    const [condition,setCondition] = useState("")
+    const [cheeseLine,setCheeseLine] = useState("")
+    const [generatedUrl,setGeneratedUrl] = useState("")
     const inputHandler = (e,setterFunction)=>{
         setterFunction(e.target.value)
     }
     const loginHandler = async(e)=>{
         e.preventDefault()
+        setLoading(true)
         const data = await loginUser({username,password})
+        setLoading(false)
         if(data?.error){
             alert(data?.error)
             return
@@ -33,10 +36,6 @@ function CreateProposal() {
         }
         console.log(data)
         console.log("Login")
-    }
-    const submitHandler = async(e)=>{
-        e.preventDefault()
-        console.log("Submittedasdfsfdasdf")
     }
     const updateHandler = async(e)=>{
         e.preventDefault()
@@ -98,7 +97,13 @@ function CreateProposal() {
                             onChange={e=>inputHandler(e,setPassword)}
                             class="form-control"
                         />
-                        <button class="btn btn-primary">Login</button>
+                        <button className="btn btn-primary" >
+                            {
+                                loading ? <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>:
+                                'Login'
+                            }
+                            {console.log(loading)}
+                        </button>
                         <p>If your account doesn't exist it will create new account.</p>
                     </form>     
                 </div>
@@ -119,7 +124,7 @@ function CreateProposal() {
                         />
                         <div>
                             <ul className="terams_and_conditions">
-                                <li><h2>Your Terms and Conditons</h2></li>
+                                <li><h2>Agreements</h2></li>
                                 {
                                     terms?.map((term,idx)=>{
                                         return(<li key={idx+1} className="c-l">
@@ -197,8 +202,6 @@ function CreateProposal() {
                         }
                     </form> 
                 </div>
-                
-
             }
             
         </div>
