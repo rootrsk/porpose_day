@@ -52,6 +52,7 @@ h2{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
     }
 }
 
@@ -76,6 +77,13 @@ h2{
     }
     li{
         list-style-type: none;
+        margin-top: 10px;
+        background: #fff;
+        background: url('https://j.gifs.com/yDNGog.gif');
+        // background: url('https://i.makeagif.com/media/10-08-2016/OSmuFJ.gif');
+        background-size: cover;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     .broken-heart{
@@ -138,13 +146,14 @@ h2{
     top: 0;
     bottom: 0;
     overflow: scroll;
-    background: url('https://i.pinimg.com/originals/77/7d/21/777d210599820ce0321f8d1612f24720.gif');
+    // background: url('https://i.pinimg.com/originals/77/7d/21/777d210599820ce0321f8d1612f24720.gif');
     // background: url('https://thumbs.gfycat.com/RawGoodnaturedGnat-max-1mb.gif');
     // background: url('https://www.icegif.com/wp-content/uploads/icegif-5606.gif');
     // background: url('https://www.icegif.com/wp-content/uploads/icegif-5601.gif');
     // background: url('https://thumbs.gfycat.com/BoilingThirdFoxhound-size_restricted.gif');
     // background: url('https://bestanimations.com/media/roses/281761993garden-roses-swaying-gif.gif');
     // background: url('https://data.whicdn.com/images/296880011/original.gif');
+    // background: url('https://media.tenor.com/lMm17TqXuwwAAAAi/animal-cute.gif');
 
     .cheese_line{
         font-family: 'Love Light', cursive;
@@ -179,7 +188,7 @@ h2{
     background: url('https://img1.picmix.com/output/stamp/normal/6/6/2/5/795266_46389.gif');
     background: url('https://bestanimations.com/media/many-hearts/1949864533tiny-small-hearts-pattern-flying-animated-gif-2.gif');
     background: #fff;
-    // background: url('https://j.gifs.com/yDNGog.gif');
+    background: url('https://j.gifs.com/yDNGog.gif');
     // background: url('https://i.makeagif.com/media/10-08-2016/OSmuFJ.gif');
     background-size: cover;
     background-clip: text;
@@ -194,7 +203,11 @@ h2{
     
 }
 
+.image_f{
+    margin: auto;
+    display: flex;
 
+}
 
 /* Keyframes Animations*/
 

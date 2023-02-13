@@ -72,9 +72,9 @@ function Homepage() {
         }
         console.log(data)
         setProposalStatus("rejected")
-        setTimeout(() => {
-            navigate('/')
-        }, 5000);
+        // setTimeout(() => {
+        //     navigate('/')
+        // }, 5000);
     }
     const termRejectHandler = async()=>{
         const data = await updateProposalStatus({
@@ -86,9 +86,9 @@ function Homepage() {
             return alert(data?.error)
         }
         console.log(data)
-        setTimeout(() => {
-            navigate('/')
-        }, 5000);
+        // setTimeout(() => {
+        //     navigate('/')
+        // }, 5000);
         setProposalStatus("rejected")
     }
     return (
@@ -126,6 +126,7 @@ function Homepage() {
                             Reject
                         </button>
                     </div>
+                    <img className="image_f" src="https://media.tenor.com/905u0Gsct30AAAAj/tkthao219-bubududu.gif" alt="" />
                 </div>
 
             }
