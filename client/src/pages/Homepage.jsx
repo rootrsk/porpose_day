@@ -1,27 +1,39 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { getProposal, updateProposalStatus } from '../utils'
 function Homepage() {
     const [proposal,setProposal] = useState(null)
     const [proposalStatus,setProposalStatus] = useState(null)
     const [terms,setTerms] = useState(null)
+    const [q,setQ] = useState(null)
     const location = useLocation()
+    const navigate = useNavigate()
     console.log(location)
     const query = location.search
     console.log(query)
     useEffect(()=>{
+        
         (async()=>{
-            const data = await getProposal(query?.split('?q=')?.[1])
-            if(data?.error){
-                return alert(data?.error)
+            if(query.split('?q=')?.[1]){
+                setQ(query.split('?q=')?.[1])
+                const data = await getProposal(query?.split('?q=')?.[1])
+                if(data?.error){
+                    return alert(data?.error)
+                }
+                if(data?.user){
+                    setProposal(data)
+                }
+                console.log(data)
+            }else{
+                setProposal(null)
+                setProposalStatus(null)
+                setTerms(null)
+                setQ(null)
             }
-            if(data?.user){
-                setProposal(data)
-            }
-            console.log(data)
+            
         })()
-    },[])
+    },[query])
     const accectHandler = async()=>{
         
         const data = await updateProposalStatus({
@@ -60,6 +72,9 @@ function Homepage() {
         }
         console.log(data)
         setProposalStatus("rejected")
+        setTimeout(() => {
+            navigate('/')
+        }, 5000);
     }
     const termRejectHandler = async()=>{
         const data = await updateProposalStatus({
@@ -71,10 +86,25 @@ function Homepage() {
             return alert(data?.error)
         }
         console.log(data)
+        setTimeout(() => {
+            navigate('/')
+        }, 5000);
         setProposalStatus("rejected")
     }
     return (
         <div>
+            {
+                !q && 
+                <div className="about">
+                    <h2>Propose Your Crush</h2>
+                    <button className="btn btn-primary" onClick={()=>navigate('/create-new')}>
+                        Start Now
+                    </button>
+                    <footer className='footer'>
+                        <p>Developoed By Ravishankar.</p>
+                    </footer>
+                </div>  
+            }
             {proposal && proposal.user && 
                 <div className='proposal_home'>
                     <h2>You have been proposed by {proposal?.user?.showname}</h2>

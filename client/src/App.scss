@@ -238,3 +238,42 @@ h2{
     background: rgba(255, 59, 5, 0.757);
 
 }
+.about{
+    background: url('https://www.brides.com/thmb/s0Z8B-vrlTnoY_UANYD10JOwx1c=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__brides__proteus__5c1948eeba98247fa6942af3__11-6acb4f2401f44a598f4c6a235938aa2d.jpeg');
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    h2{
+        color:#fff;
+    }
+    button{
+        background: url('https://media.tenor.com/7IDhzvakRJoAAAAC/love-hearts.gif');
+        background: url('https://bestanimations.com/uploads/gifs/373846046large-beating-heart-gif-animation3.gif');
+        background-position: center;
+        padding: 10px 30px;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        // -ms-transform: translateY(-50%);
+        transform: translate(-50%,-50%);
+        outline:none;
+        border: none;
+    }
+    footer{
+        position:absolute;
+        bottom:0;
+        left:0;
+        right:0;
+        text-align: center;
+        font-weight: 700;
+        color: #720013;
+        font-size:22px;
+    }
+
+}

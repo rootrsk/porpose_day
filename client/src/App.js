@@ -6,7 +6,7 @@ function App() {
     return (
        <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Homepage />} />
+                <Route path="/" element={<Homepage />} exact/>
                 <Route path="/create-new" element={<CreateProposal />} />
             </Routes>
        </BrowserRouter>

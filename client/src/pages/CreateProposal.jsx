@@ -34,8 +34,8 @@ function CreateProposal() {
             setTerms(data?.user?.terms_and_conditions ?? [])
             setShow(data?.user?.showname ?? "")
         }
-        console.log(data)
-        console.log("Login")
+        // console.log(data)
+        // console.log("Login")
     }
     const updateHandler = async(e)=>{
         e.preventDefault()
@@ -45,7 +45,7 @@ function CreateProposal() {
             terms_and_conditions : terms,
             showname:show
         })
-        console.log(data)
+        // console.log(data)
     }
     const termAddHandler = ()=>{
         setTerms(p=>[...p,condition])
@@ -56,9 +56,9 @@ function CreateProposal() {
     }
     const urlGeneratorHandler = async(e)=>{
         e.preventDefault()
-        console.log("url GEn")
+        // console.log("url GEn")
         const data = await porposeUrlGenerator({theOne})
-        console.log(data)
+        // console.log(data)
         const hostname = "https://" + window.location.hostname
         const query = "?q=" + data.token
         if(data?.token){
@@ -88,21 +88,21 @@ function CreateProposal() {
                             placeholder='Username'
                             value={username}
                             onChange={e=>inputHandler(e,setUsername)}
-                            class="form-control"
+                            className="form-control"
                         />
                         <input 
                             type="text" 
                             placeholder='Password'
                             value={password}
                             onChange={e=>inputHandler(e,setPassword)}
-                            class="form-control"
+                            className="form-control"
                         />
                         <button className="btn btn-primary" >
                             {
                                 loading ? <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>:
                                 'Login'
                             }
-                            {console.log(loading)}
+                            {/* {console.log(loading)} */}
                         </button>
                         <p>If your account doesn't exist it will create new account.</p>
                     </form>     
@@ -120,17 +120,18 @@ function CreateProposal() {
                             placeholder='Your Cheese Line'
                             value={cheeseLine}
                             onChange={e=>inputHandler(e,setCheeseLine)}
-                            class="form-control"
+                            className="form-control"
                         />
                         <div>
                             <ul className="terams_and_conditions">
                                 <li><h2>Promises</h2></li>
-                                <li class="form-check">
+                                <li className="form-check">
                                     <input 
                                         className="form-check-input" 
                                         type="checkbox" 
                                         id="flexCheckChecked" 
                                         checked
+                                        readOnly
                                     />
 
                                     <label className="form-check-label">
@@ -146,7 +147,7 @@ function CreateProposal() {
                                             </div>
                                             
                                             <button 
-                                                class="btn btn-danger"
+                                                className="btn btn-danger"
                                                 onClick={()=>termRemoveHandler(idx)}
                                             >X
                                             </button>
@@ -159,11 +160,11 @@ function CreateProposal() {
                                 placeholder='Your Condition'
                                 value={condition}
                                 onChange={e=>inputHandler(e,setCondition)}
-                                class="form-control"
+                                className="form-control"
                             />
                               
                             <button 
-                                class="btn btn-primary"
+                                className="btn btn-primary"
                                 onClick={termAddHandler}
                             >Add Terms and Conditions</button> 
                             <input 
@@ -171,7 +172,7 @@ function CreateProposal() {
                                 placeholder='Your Name to be shown'
                                 value={show}
                                 onChange={e=>inputHandler(e,setShow)}
-                                class="form-control"
+                                className="form-control"
                             />  
                         </div>
                         
@@ -187,7 +188,7 @@ function CreateProposal() {
                             placeholder='To Whom You want to purpose'
                             value={theOne}
                             onChange={e=>inputHandler(e,setTheOne)}
-                            class="form-control"
+                            className="form-control"
                         />
                         <button
                             className="btn btn-primary"
@@ -201,7 +202,7 @@ function CreateProposal() {
                                     type="text" 
                                     placeholder='To Whom You want to purpose'
                                     value={generatedUrl}
-                                    class="form-control"
+                                    className="form-control"
                                     disabled
                                 />
                                 <button 
@@ -226,8 +227,8 @@ function CreateProposal() {
                             </thead>
                             
                             <tbody>
-                                {user?.proporsals?.map(prop=>{
-                                    return <tr>
+                                {user?.proporsals?.map((prop,idx)=>{
+                                    return <tr key={idx+1}>
                                         <td>{prop.by}</td>
                                         <td 
                                             className={`${!prop.proposal?'pending':prop.proposal==='Accepted'?'accepted':'rejected'}`}
