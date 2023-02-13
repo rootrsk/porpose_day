@@ -136,6 +136,15 @@ h2{
     .broken-heart{
 
     }
+    a{
+        position:absolute;
+        bottom:0;
+        left:0;
+        right:0;
+        z-index: 1000;
+        text-align: center;
+        padding-bottom: 10px;
+    }
 }
 .proposal_home{
     // width: 90%;

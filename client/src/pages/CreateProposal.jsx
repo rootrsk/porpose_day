@@ -178,14 +178,22 @@ function CreateProposal() {
                                 className="form-control"
                             />  
                             <div class="input-group mb-3">
-    <div className="input-group-prepend">
-        <span className="input-group-text" id="basic-addon3">https://www.instagram.com/</span>
-    </div>
-    <input 
-    onChange={e=>inputHandler(e,setInstagram)}
-    value={instagram}
-
-    type="text" className="form-control" id="basic-url" aria-describedby="basic-addon3" />
+                            <div className="input-group-prepend">
+                                <span 
+                                    className="input-group-text" 
+                                    id="basic-addon3"
+                                >
+                                    https://www.instagram.com/
+                                </span>
+                            </div>
+                            <input 
+                                onChange={e=>inputHandler(e,setInstagram)}
+                                value={instagram}
+                                type="text" 
+                                className="form-control" 
+                                id="basic-url" 
+                                aria-describedby="basic-addon3" 
+                            />
     </div>
                         </div>
                         
