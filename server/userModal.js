@@ -23,7 +23,10 @@ const userSchema = new mongoose.Schema({
     terms_and_conditions:[{
         type:String
     }],
-    proporsals:[{}]
+    proporsals:[{}],
+    instagram:{
+        type:String
+    }
 })
 
 const User = mongoose.model("user",userSchema)

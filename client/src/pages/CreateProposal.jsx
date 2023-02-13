@@ -12,6 +12,7 @@ function CreateProposal() {
     const [loading,setLoading] = useState(false)
     const [condition,setCondition] = useState("")
     const [cheeseLine,setCheeseLine] = useState("")
+    const [instagram,setInstagram] = useState("")
     const [generatedUrl,setGeneratedUrl] = useState("")
     const inputHandler = (e,setterFunction)=>{
         setterFunction(e.target.value)
@@ -33,6 +34,7 @@ function CreateProposal() {
             setCheeseLine(data?.user?.cheese_line ?? "")
             setTerms(data?.user?.terms_and_conditions ?? [])
             setShow(data?.user?.showname ?? "")
+            setInstagram(data?.user?.instagram??"")
         }
         // console.log(data)
         // console.log("Login")
@@ -43,7 +45,8 @@ function CreateProposal() {
         const data = await updateUserDetails({
             cheese_line:cheeseLine,
             terms_and_conditions : terms,
-            showname:show
+            showname:show,
+            instagram
         })
         // console.log(data)
     }
@@ -174,6 +177,16 @@ function CreateProposal() {
                                 onChange={e=>inputHandler(e,setShow)}
                                 className="form-control"
                             />  
+                            <div class="input-group mb-3">
+    <div className="input-group-prepend">
+        <span className="input-group-text" id="basic-addon3">https://www.instagram.com/</span>
+    </div>
+    <input 
+    onChange={e=>inputHandler(e,setInstagram)}
+    value={instagram}
+
+    type="text" className="form-control" id="basic-url" aria-describedby="basic-addon3" />
+    </div>
                         </div>
                         
                         <button 
