@@ -124,7 +124,19 @@ function CreateProposal() {
                         />
                         <div>
                             <ul className="terams_and_conditions">
-                                <li><h2>Agreements</h2></li>
+                                <li><h2>Promises</h2></li>
+                                <li class="form-check">
+                                    <input 
+                                        className="form-check-input" 
+                                        type="checkbox" 
+                                        id="flexCheckChecked" 
+                                        checked
+                                    />
+
+                                    <label className="form-check-label">
+                                        Show Promises
+                                    </label>
+                                </li>
                                 {
                                     terms?.map((term,idx)=>{
                                         return(<li key={idx+1} className="c-l">
@@ -201,6 +213,34 @@ function CreateProposal() {
                             </div>
                         }
                     </form> 
+                    <div className="proposal_status">
+                        <h2>Your Proposal Status</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Proposal</th>
+                                    <th>Promise</th>
+                                </tr>
+
+                            </thead>
+                            
+                            <tbody>
+                                {user?.proporsals?.map(prop=>{
+                                    return <tr>
+                                        <td>{prop.by}</td>
+                                        <td 
+                                            className={`${!prop.proposal?'pending':prop.proposal==='Accepted'?'accepted':'rejected'}`}
+                                        >
+                                            {prop.proposal}
+                                        </td>
+                                        <td className={`${!prop.terms_and_conditons?'pending':prop.terms_and_conditons==='Accepted'?'accepted':'rejected'}`}>{prop.terms_and_conditons}</td>
+                                    </tr>
+                                })}        
+                            </tbody>
+                        </table>
+                        
+                    </div>
                 </div>
             }
             

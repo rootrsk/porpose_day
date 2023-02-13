@@ -29,9 +29,12 @@ h2{
         input,button{
             margin-top: 20px;
         }
+        
     }
 }
-
+.form-check-label{
+    margin-top: 20px;
+}
 .create_new_page{
     width: 90%;
     margin: auto;
@@ -61,15 +64,31 @@ h2{
     bottom: 0;
     z-index: 10;
     background: #fff;
+    left: 100vw;
+    transition-timing-function: ease-in;
+    // animation: slider 3s;
+    // padding: 10px;
+    transition: 1s all;
+    h3{
+        text-align: center;
+        letter-spacing: 1.5px;
+        margin-top: 20px;
+    }
     li{
         list-style-type: none;
     }
+
     .broken-heart{
         height: 90vh;
-
+    }
+    img{
+        margin: auto;
+        display: flex;
     }
 }
-
+.slider{
+    left:0px;
+}
 .show-terms-broken{
     position: absolute;
     overflow-y: scroll;
@@ -91,7 +110,25 @@ h2{
 
     }
 }
+.show-terms-joined{
+    position: absolute;
+    overflow-y: scroll;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background: #fff;
+    li{
+        list-style-type: none;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .broken-heart{
 
+    }
+}
 .proposal_home{
     // width: 90%;
     // margin: auto;
@@ -102,12 +139,12 @@ h2{
     bottom: 0;
     overflow: scroll;
     background: url('https://i.pinimg.com/originals/77/7d/21/777d210599820ce0321f8d1612f24720.gif');
-    background: url('https://thumbs.gfycat.com/RawGoodnaturedGnat-max-1mb.gif');
-    background: url('https://www.icegif.com/wp-content/uploads/icegif-5606.gif');
-    background: url('https://www.icegif.com/wp-content/uploads/icegif-5601.gif');
-    background: url('https://thumbs.gfycat.com/BoilingThirdFoxhound-size_restricted.gif');
-    background: url('https://bestanimations.com/media/roses/281761993garden-roses-swaying-gif.gif');
-    background: url('https://data.whicdn.com/images/296880011/original.gif');
+    // background: url('https://thumbs.gfycat.com/RawGoodnaturedGnat-max-1mb.gif');
+    // background: url('https://www.icegif.com/wp-content/uploads/icegif-5606.gif');
+    // background: url('https://www.icegif.com/wp-content/uploads/icegif-5601.gif');
+    // background: url('https://thumbs.gfycat.com/BoilingThirdFoxhound-size_restricted.gif');
+    // background: url('https://bestanimations.com/media/roses/281761993garden-roses-swaying-gif.gif');
+    // background: url('https://data.whicdn.com/images/296880011/original.gif');
 
     .cheese_line{
         font-family: 'Love Light', cursive;
@@ -140,9 +177,62 @@ h2{
     background: url('https://img1.picmix.com/output/stamp/normal/6/6/2/5/795266_46389.gif');
     background: url('https://bestanimations.com/media/many-hearts/1949864533tiny-small-hearts-pattern-flying-animated-gif-2.gif');
     background: #fff;
-    background: url('https://j.gifs.com/yDNGog.gif');
+    // background: url('https://j.gifs.com/yDNGog.gif');
     // background: url('https://i.makeagif.com/media/10-08-2016/OSmuFJ.gif');
     background-size: cover;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.promises{
+    width:90%;
+    max-width: 700px;
+    margin: auto;
+    font-size: 20px;
+    
+}
+
+
+
+/* Keyframes Animations*/
+
+@keyframes slider {
+//   0%   {top: 100vw; left: 0px; background: red;}
+//   25%  {top: 0px; left: 100px; background: blue;}
+//   50%  {top: 100px; left: 100px; background: yellow;}
+//   75%  {top: 100px; left: 0px; background: green;}
+//   100% {top: 0px; left: 0px; background: red;}
+    0%{ left: 100vw;}
+    100%{ left: 0;}
+}
+
+.proposal_status{
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        // border-radius: 6px;
+        // margin:15px;
+      }
+      
+      tr:nth-child(even) {
+        // background-color: #dddddd;
+      }
+}
+.pending{
+    background: rgb(245, 231, 121);
+}
+.accepted{
+    background: rgba(73, 236, 89, 0.758);
+
+}
+.rejected{
+    background: rgba(255, 59, 5, 0.757);
+
 }

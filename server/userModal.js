@@ -14,6 +14,9 @@ const userSchema = new mongoose.Schema({
     showname:{
         type:String,
     },
+    show_promise:{
+        type:Boolean                
+    },
     cheese_line:{
         type: String,
     },

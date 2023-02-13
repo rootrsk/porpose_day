@@ -100,19 +100,22 @@ function Homepage() {
 
             }
             {
-                proposal && proposal.user && proposalStatus==="accepted" && 
-                <div className='show-terms'>
-                    <h3>Agreements</h3>
-                    {
-                        proposal?.user?.terms_and_conditions?.map((term,idx)=>{
-                            return <li key={idx+1}>
-                                <span>{idx+1}. </span>
-                                {term}
-                            </li>
-                        })
-                    }
+                proposal && proposal.user && true && 
+                <div className={`show-terms ${proposalStatus==="accepted"?'slider':''}`}>
+                    <h3>Promises</h3>
+                    <div className="promises">
+                        {
+                            proposal?.user?.terms_and_conditions?.map((term,idx)=>{
+                                return <li key={idx+1}>
+                                    <span>{idx+1}. </span>
+                                    {term}
+                                </li>
+                            })
+                        }    
+                    </div>
+                    
                     <img src="https://media.tenor.com/JLMnejbPZeEAAAAj/heart-love-you.gif" alt="" />
-                    <div>
+                    <div className="add-button">
                         <button 
                             className='btn btn-success'
                             onClick={termAccectHandler}
@@ -143,6 +146,16 @@ function Homepage() {
                 <div className='show-terms-broken'>
                     <img 
                         src="https://media.tenor.com/zhy7eq_NWkUAAAAi/heart-break.gif" 
+                        alt=""
+                        className='broken-heart' 
+                    />
+                </div>
+            }
+            {
+                proposal && proposal.user && (proposalStatus==="accepted" && terms==="accepted") && 
+                <div className='show-terms-joined'>
+                    <img 
+                        src="https://media.tenor.com/4vEeYzBwLu4AAAAi/turning-hugging.gif" 
                         alt=""
                         className='broken-heart' 
                     />
