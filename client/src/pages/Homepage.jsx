@@ -190,7 +190,13 @@ function Homepage() {
                         alt=""
                         className='broken-heart' 
                     />
-                    <a href={'https://www.instagram.com/'+proposal?.user?.instagram}>Instagram</a>
+                    
+                    <a 
+                        href={'https://www.instagram.com/'+proposal?.user?.instagram}
+                    >
+                        <img src="https://i.ibb.co/VjfRhCG/icons8-instagram-240.png" alt="" />
+                        <p>Let's connect</p>
+                    </a>
                 </div>
             }
             
